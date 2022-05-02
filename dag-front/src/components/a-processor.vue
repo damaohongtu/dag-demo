@@ -8,15 +8,8 @@
                 <input class="input_config" v-model="itemData.id"  type="text" disabled="disabled"/>
             </div>
             <div>
-                <label>配置2:</label>
-                <input class="input_config" placeholder="" v-model="itemData.config2" @input="onInputConfig2"/>
-            </div>
-            <div>
-                <label>配置3:</label>
-                <select v-model="itemData.config3" class="input_config"  @input="onInputConfig3">
-                    <option value="配置3.1">配置3.1</option>
-                    <option value="配置3.2">配置3.2</option>
-                </select>
+                <label>配置:</label>
+                <input class="input_config" placeholder="" v-model="itemData.configInfo" @input="onInputConfigInfo"/>
             </div>
         </div>
     </div>
@@ -27,16 +20,10 @@
 export default {
     props: ['itemData'],
     methods: {
-        onInputConfig2(e) {
-            this.$store.commit('updateConfig2', { 
+        onInputConfigInfo(e) {
+            this.$store.commit('updateConfigInfo', { 
                 id: this.itemData.id, 
-                config2: e.target.value
-            });
-        },
-        onInputConfig3(e) {
-            this.$store.commit('updateConfig3', { 
-                id: this.itemData.id, 
-                config3: e.target.value
+                configInfo: e.target.value
             });
         }
     }

@@ -5,7 +5,15 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        data: JSON.parse(localStorage.getItem('data')) || {
+        // data: JSON.parse(localStorage.getItem('data')) || {
+        //     bizCode: -1,
+        //     bizName: '',
+        //     nodes: [],
+        //     edges: []
+        // }
+        data: {
+            bizCode: -1,
+            bizName: '',
             nodes: [],
             edges: []
         }
@@ -23,8 +31,7 @@ export default new Vuex.Store({
                 left: length * 400,
                 top: length%2 * 300,
                 iconType: 'icon-xianshang',
-                config2:'',
-                config3:'',
+                configInfo: '',
                 processor: 'A',
                 endpoints: [
                     {
@@ -58,8 +65,7 @@ export default new Vuex.Store({
                 left: length * 400,
                 top: length%2 * 300,
                 iconType: 'icon-xianshang',
-                config2:'',
-                config3:'',
+                configInfgo:'',
                 processor: 'B',
                 endpoints: [
                     {
@@ -93,8 +99,7 @@ export default new Vuex.Store({
                 left: length * 400,
                 top: length%2 * 300,
                 iconType: 'icon-xianshang',
-                config2:'',
-                config3:'',
+                configInfo:'',
                 processor: 'C',
                 endpoints: [
                     {
@@ -128,8 +133,7 @@ export default new Vuex.Store({
                 left: length * 400,
                 top: length%2 * 300,
                 iconType: 'icon-xianshang',
-                config2:'',
-                config3:'',
+                configInfo:'',
                 processor: 'D',
                 endpoints: [
                     {
@@ -156,14 +160,21 @@ export default new Vuex.Store({
             });
         },
 
-        updateConfig2(state, { id, config2 }) {
-            state.data.nodes.find(x => x.id === id).config2 = config2;
+        updateConfigInfo(state, { id, configInfo }) {
+            state.data.nodes.find(x => x.id === id).configInfo = configInfo;
+            //localStorage.setItem('data', JSON.stringify(state.data));
+        },
+
+        updateBizCode(state, {bizCode}) {
+            state.data.bizCode = bizCode;
+            //localStorage.setItem('data', JSON.stringify(state.data));
+        },
+
+        updateBizName(state, {bizName}) {
+            state.data.bizName = bizName;
             localStorage.setItem('data', JSON.stringify(state.data));
         },
-        updateConfig3(state, { id, config3 }) {
-            state.data.nodes.find(x => x.id === id).config3 = config3;
-            localStorage.setItem('data', JSON.stringify(state.data));
-        },
+
         save(state) {
             localStorage.setItem('data', JSON.stringify(state.data));
         }

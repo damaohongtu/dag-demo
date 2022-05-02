@@ -12,6 +12,10 @@ public class RegisterRepo {
     @Resource
     private RegisterMapper registerMapper;
 
+    public int insert(Register register){
+        return registerMapper.insert(register);
+    }
+
     public Register getRegister(Long id){
         return registerMapper.selectByPrimaryKey(id);
     }

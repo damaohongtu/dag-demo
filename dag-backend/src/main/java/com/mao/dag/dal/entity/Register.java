@@ -9,6 +9,8 @@ public class Register implements Serializable {
 
     private String bizName;
 
+    private String edges;
+
     private Integer valid;
 
     private static final long serialVersionUID = 1L;
@@ -37,6 +39,14 @@ public class Register implements Serializable {
         this.bizName = bizName == null ? null : bizName.trim();
     }
 
+    public String getEdges() {
+        return edges;
+    }
+
+    public void setEdges(String edges) {
+        this.edges = edges == null ? null : edges.trim();
+    }
+
     public Integer getValid() {
         return valid;
     }
@@ -54,6 +64,7 @@ public class Register implements Serializable {
         sb.append(", id=").append(id);
         sb.append(", bizCode=").append(bizCode);
         sb.append(", bizName=").append(bizName);
+        sb.append(", edges=").append(edges);
         sb.append(", valid=").append(valid);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");

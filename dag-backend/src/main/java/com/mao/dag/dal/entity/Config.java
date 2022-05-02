@@ -9,11 +9,15 @@ public class Config implements Serializable {
 
     private Integer configCode;
 
+    private String processor;
+
     private String configInfo;
 
     private String parentCode;
 
     private String childCode;
+
+    private String nodeLoc;
 
     private Integer valid;
 
@@ -43,6 +47,14 @@ public class Config implements Serializable {
         this.configCode = configCode;
     }
 
+    public String getProcessor() {
+        return processor;
+    }
+
+    public void setProcessor(String processor) {
+        this.processor = processor == null ? null : processor.trim();
+    }
+
     public String getConfigInfo() {
         return configInfo;
     }
@@ -67,6 +79,14 @@ public class Config implements Serializable {
         this.childCode = childCode == null ? null : childCode.trim();
     }
 
+    public String getNodeLoc() {
+        return nodeLoc;
+    }
+
+    public void setNodeLoc(String nodeLoc) {
+        this.nodeLoc = nodeLoc == null ? null : nodeLoc.trim();
+    }
+
     public Integer getValid() {
         return valid;
     }
@@ -84,9 +104,11 @@ public class Config implements Serializable {
         sb.append(", id=").append(id);
         sb.append(", bizCode=").append(bizCode);
         sb.append(", configCode=").append(configCode);
+        sb.append(", processor=").append(processor);
         sb.append(", configInfo=").append(configInfo);
         sb.append(", parentCode=").append(parentCode);
         sb.append(", childCode=").append(childCode);
+        sb.append(", nodeLoc=").append(nodeLoc);
         sb.append(", valid=").append(valid);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");

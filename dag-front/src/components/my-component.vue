@@ -9,17 +9,31 @@
         <button @click="addB">添加B处理器</button>
         <button @click="addC">添加C处理器</button>
         <button @click="addD">添加D处理器</button>
+
+        <div>
+            <div>
+                <label>BizCode:</label>
+                <input placeholder="" v-model="bizCode" @input="onInputBizCode"/>
+            </div>
+
+            <div>
+                <label>BizName:</label>
+                <input placeholder="" v-model="bizName" @input="onInputBizName"/>
+            </div>
+        </div>
+
         <div class="content">
             <el-table :data="configInfo" border>
                 <el-table-column prop="id" label="配置码"></el-table-column>
-                <el-table-column prop="config2" label="配置2"></el-table-column>
-                <el-table-column prop="config3" label="配置3"></el-table-column>
+                <el-table-column prop="configInfo" label="配置信息"></el-table-column>
                 <el-table-column prop="parent" label="父节点"></el-table-column>
                 <el-table-column prop="child" label="子节点"></el-table-column>
             </el-table>
         </div>
         <button @click="testBackEnd">测试后端接口</button>
         <div>{{backEndData}}</div>
+        <button @click="testCreateConfig">测试创建</button>
+
     </div>
 
 </template>
@@ -34,7 +48,7 @@ export default {
     },
 
     data(){
-        return {backEndData:''};
+        return {backEndData:'', bizCode:-1, bizName:''};
     },
 
     computed: {
@@ -70,8 +84,7 @@ export default {
                 const element = nodes[index];
                 var item = {
                     'id':element.id, 
-                    'config2':element.config2,
-                    'config3':element.config3,
+                    'configInfo':element.configInfo,
                     'parent':graphParent[element.id].join('; '), 
                     'child':graphChild[element.id].join('; ')
                 };
@@ -118,8 +131,25 @@ export default {
                 this.backEndData = JSON.stringify(res.data);
             });
 
-        }
+        },
+        testCreateConfig(){
+            var info = {...this.data};
+            console.log(info);
+            this.axios.post('/test', info).then((res) => {
+                console.log(res.data);
+            });
 
+        },
+        onInputBizCode(e) {
+            this.$store.commit('updateBizCode', {
+                bizCode: e.target.value
+            });
+        },
+        onInputBizName(e) {
+            this.$store.commit('updateBizName', {
+                bizName: e.target.value
+            });
+        },
     }
 }
 </script>
