@@ -18,21 +18,25 @@
                 <el-table-column prop="child" label="子节点"></el-table-column>
             </el-table>
         </div>
-
-        <!-- <div>{{configInfo}}</div> -->
+        <button @click="testBackEnd">测试后端接口</button>
+        <div>{{backEndData}}</div>
     </div>
 
 </template>
 
 <script>
 import { ButterflyVue } from 'butterfly-vue';
-import {PROCESSOR_DICT} from './processor-dict.js';
+import {PROCESSOR_DICT} from '../processor-dict.js';
 
 export default {
     components: {
         ButterflyVue
     },
-    
+
+    data(){
+        return {backEndData:''};
+    },
+
     computed: {
         
         data: {
@@ -107,6 +111,13 @@ export default {
         },
         save() {
             this.$store.commit('save');
+        },
+        testBackEnd(){
+            this.axios.post('/test').then((res) => {
+                console.log(res.data);
+                this.backEndData = JSON.stringify(res.data);
+            });
+
         }
 
     }

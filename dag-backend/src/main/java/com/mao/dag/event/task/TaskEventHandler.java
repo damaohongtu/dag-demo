@@ -12,18 +12,18 @@ import org.springframework.stereotype.Component;
 @Component
 public class TaskEventHandler {
 
-    @Lazy
-    @Autowired
-    private TaskEventHandler handler;
-
-    @Subscribe
-    @AllowConcurrentEvents
-    public void subscribe(TaskEvent event){
-        handler.handle(event.toContext());
-    }
-
-    public void handle(TaskContext context) {
-        log.info("JobEventHandler handle, context={}", JSON.toJSONString(context));
-    }
+//    @Lazy
+//    @Autowired
+//    private TaskEventHandler handler;
+//
+//    @Subscribe
+//    @AllowConcurrentEvents
+//    public void subscribe(TaskEvent event){
+//        handler.handle(event.toContext());
+//    }
+//
+//    public void handle(TaskContext context) {
+//        log.info("JobEventHandler handle, context={}", JSON.toJSONString(context));
+//    }
 
 }

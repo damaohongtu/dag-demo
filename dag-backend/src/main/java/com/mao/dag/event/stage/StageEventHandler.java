@@ -12,18 +12,18 @@ import org.springframework.stereotype.Component;
 @Component
 public class StageEventHandler {
 
-    @Lazy
-    @Autowired
-    private StageEventHandler handler;
-
-    @Subscribe
-    @AllowConcurrentEvents
-    public void subscribe(StageEvent event){
-        handler.handle(event.toContext());
-    }
-
-    public void handle(StageContext context) {
-        log.info("JobEventHandler handle, context={}", JSON.toJSONString(context));
-    }
+//    @Lazy
+//    @Autowired
+//    private StageEventHandler handler;
+//
+//    @Subscribe
+//    @AllowConcurrentEvents
+//    public void subscribe(StageEvent event){
+//        handler.handle(event.toContext());
+//    }
+//
+//    public void handle(StageContext context) {
+//        log.info("JobEventHandler handle, context={}", JSON.toJSONString(context));
+//    }
 
 }

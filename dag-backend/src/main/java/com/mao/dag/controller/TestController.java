@@ -25,8 +25,8 @@ public class TestController {
     private KafkaTemplate kafkaTemplate;
 
     @RequestMapping("/getConfig")
-    public Register testScreenShot(@RequestParam Long id) {
-
+    public Register testScreenShot() {
+        Long id = 1L;
         Register register = registerConfigRepo.getRegister(id);
 
         String item = JSON.toJSONString(register);

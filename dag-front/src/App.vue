@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-      <MyComponent />
+    <router-view/>
   </div>
 </template>
 
 <script>
 
-import MyComponent from './my-component.vue';
 
 export default {
   name: 'App',
-  components: {
-      MyComponent
-  }
+  data() {
+      return {}
+  },
+  methods: {}
 }
 </script>
 

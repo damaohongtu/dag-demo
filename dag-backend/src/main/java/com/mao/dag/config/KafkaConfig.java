@@ -24,7 +24,7 @@ import java.util.Map;
 @Configuration //指明是一个配置类,使用@Bean来添加组件
 public class KafkaConfig {
 
-    String bootstrap_servers = "192.168.0.109:9092";
+    String bootstrap_servers = "192.168.0.105:9092";
 
     @Bean
     public ConsumerFactory<String, String> consumerFactory() {

@@ -15,25 +15,25 @@ import javax.annotation.Resource;
 @Component
 public class StageEventBus {
 
-    @Resource(name = "jobEventExecutor")
-    private ThreadPoolTaskExecutor executor;
-
-    @Resource
-    private StageEventHandler jobEventHandler;
-
-    private EventBus eventBus;
-
-    @PostConstruct
-    public void init(){
-        this.eventBus = EventBusManager.getAsyncEventBus(EventBusConstant.JOB_EVENT_BUS, executor);
-        this.eventBus.register(jobEventHandler);
-    }
-
-    public void postAsync(Object event){
-        if(event == null){
-            return;
-        }
-        this.eventBus.post(event);
-        log.info("event={}", JSON.toJSONString(event));
-    }
+//    @Resource(name = "jobEventExecutor")
+//    private ThreadPoolTaskExecutor executor;
+//
+//    @Resource
+//    private StageEventHandler jobEventHandler;
+//
+//    private EventBus eventBus;
+//
+//    @PostConstruct
+//    public void init(){
+//        this.eventBus = EventBusManager.getAsyncEventBus(EventBusConstant.JOB_EVENT_BUS, executor);
+//        this.eventBus.register(jobEventHandler);
+//    }
+//
+//    public void postAsync(Object event){
+//        if(event == null){
+//            return;
+//        }
+//        this.eventBus.post(event);
+//        log.info("event={}", JSON.toJSONString(event));
+//    }
 }
