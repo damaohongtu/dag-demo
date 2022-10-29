@@ -38,7 +38,7 @@ public class TestController {
 
         String item = JSON.toJSONString(register);
 
-        kafkaTemplate.send("kafka_test", item);
+        kafkaTemplate.send("kafka_test_001", item);
 
         return register;
     }

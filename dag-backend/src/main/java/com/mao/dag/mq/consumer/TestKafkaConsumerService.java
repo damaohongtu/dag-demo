@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class TestKafkaConsumerService {
 
-    @KafkaListener(topics = "kafka_test", groupId = "sample-group", containerFactory = "kafkaListener")
+    @KafkaListener(topics = "kafka_test_001", groupId = "sample-group", containerFactory = "kafkaListener")
     public void consume(String item){
         log.info(item);
     }
