@@ -38,4 +38,226 @@
     select id, biz_code, biz_name, edges, `valid`
     from register
   </select>
+  <resultMap id="BaseResultMap" type="com.mao.dag.dal.entity.Register">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="biz_code" jdbcType="INTEGER" property="bizCode" />
+    <result column="biz_name" jdbcType="VARCHAR" property="bizName" />
+    <result column="edges" jdbcType="VARCHAR" property="edges" />
+    <result column="valid" jdbcType="INTEGER" property="valid" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from register
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.mao.dag.dal.entity.Register">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into register (biz_code, biz_name, edges, 
+      `valid`)
+    values (#{bizCode,jdbcType=INTEGER}, #{bizName,jdbcType=VARCHAR}, #{edges,jdbcType=VARCHAR}, 
+      #{valid,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.mao.dag.dal.entity.Register">
+    update register
+    set biz_code = #{bizCode,jdbcType=INTEGER},
+      biz_name = #{bizName,jdbcType=VARCHAR},
+      edges = #{edges,jdbcType=VARCHAR},
+      `valid` = #{valid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, biz_code, biz_name, edges, `valid`
+    from register
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, biz_code, biz_name, edges, `valid`
+    from register
+  </select>
+  <resultMap id="BaseResultMap" type="com.mao.dag.dal.entity.Register">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="biz_code" jdbcType="INTEGER" property="bizCode" />
+    <result column="biz_name" jdbcType="VARCHAR" property="bizName" />
+    <result column="edges" jdbcType="VARCHAR" property="edges" />
+    <result column="valid" jdbcType="INTEGER" property="valid" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from register
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.mao.dag.dal.entity.Register">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into register (biz_code, biz_name, edges, 
+      `valid`)
+    values (#{bizCode,jdbcType=INTEGER}, #{bizName,jdbcType=VARCHAR}, #{edges,jdbcType=VARCHAR}, 
+      #{valid,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.mao.dag.dal.entity.Register">
+    update register
+    set biz_code = #{bizCode,jdbcType=INTEGER},
+      biz_name = #{bizName,jdbcType=VARCHAR},
+      edges = #{edges,jdbcType=VARCHAR},
+      `valid` = #{valid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, biz_code, biz_name, edges, `valid`
+    from register
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, biz_code, biz_name, edges, `valid`
+    from register
+  </select>
+  <resultMap id="BaseResultMap" type="com.mao.dag.dal.entity.Register">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="biz_code" jdbcType="INTEGER" property="bizCode" />
+    <result column="biz_name" jdbcType="VARCHAR" property="bizName" />
+    <result column="edges" jdbcType="VARCHAR" property="edges" />
+    <result column="valid" jdbcType="INTEGER" property="valid" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from register
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.mao.dag.dal.entity.Register">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into register (biz_code, biz_name, edges, 
+      `valid`)
+    values (#{bizCode,jdbcType=INTEGER}, #{bizName,jdbcType=VARCHAR}, #{edges,jdbcType=VARCHAR}, 
+      #{valid,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.mao.dag.dal.entity.Register">
+    update register
+    set biz_code = #{bizCode,jdbcType=INTEGER},
+      biz_name = #{bizName,jdbcType=VARCHAR},
+      edges = #{edges,jdbcType=VARCHAR},
+      `valid` = #{valid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, biz_code, biz_name, edges, `valid`
+    from register
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, biz_code, biz_name, edges, `valid`
+    from register
+  </select>
+  <resultMap id="BaseResultMap" type="com.mao.dag.dal.entity.Register">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="biz_code" jdbcType="INTEGER" property="bizCode" />
+    <result column="biz_name" jdbcType="VARCHAR" property="bizName" />
+    <result column="edges" jdbcType="VARCHAR" property="edges" />
+    <result column="valid" jdbcType="INTEGER" property="valid" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from register
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.mao.dag.dal.entity.Register">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into register (biz_code, biz_name, edges, 
+      `valid`)
+    values (#{bizCode,jdbcType=INTEGER}, #{bizName,jdbcType=VARCHAR}, #{edges,jdbcType=VARCHAR}, 
+      #{valid,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.mao.dag.dal.entity.Register">
+    update register
+    set biz_code = #{bizCode,jdbcType=INTEGER},
+      biz_name = #{bizName,jdbcType=VARCHAR},
+      edges = #{edges,jdbcType=VARCHAR},
+      `valid` = #{valid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, biz_code, biz_name, edges, `valid`
+    from register
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, biz_code, biz_name, edges, `valid`
+    from register
+  </select>
+  <resultMap id="BaseResultMap" type="com.mao.dag.dal.entity.Register">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="biz_code" jdbcType="INTEGER" property="bizCode" />
+    <result column="biz_name" jdbcType="VARCHAR" property="bizName" />
+    <result column="edges" jdbcType="VARCHAR" property="edges" />
+    <result column="valid" jdbcType="INTEGER" property="valid" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from register
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.mao.dag.dal.entity.Register">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into register (biz_code, biz_name, edges, 
+      `valid`)
+    values (#{bizCode,jdbcType=INTEGER}, #{bizName,jdbcType=VARCHAR}, #{edges,jdbcType=VARCHAR}, 
+      #{valid,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.mao.dag.dal.entity.Register">
+    update register
+    set biz_code = #{bizCode,jdbcType=INTEGER},
+      biz_name = #{bizName,jdbcType=VARCHAR},
+      edges = #{edges,jdbcType=VARCHAR},
+      `valid` = #{valid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, biz_code, biz_name, edges, `valid`
+    from register
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, biz_code, biz_name, edges, `valid`
+    from register
+  </select>
+  <resultMap id="BaseResultMap" type="com.mao.dag.dal.entity.Register">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="biz_code" jdbcType="INTEGER" property="bizCode" />
+    <result column="biz_name" jdbcType="VARCHAR" property="bizName" />
+    <result column="edges" jdbcType="VARCHAR" property="edges" />
+    <result column="valid" jdbcType="INTEGER" property="valid" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from register
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.mao.dag.dal.entity.Register">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into register (biz_code, biz_name, edges, 
+      `valid`)
+    values (#{bizCode,jdbcType=INTEGER}, #{bizName,jdbcType=VARCHAR}, #{edges,jdbcType=VARCHAR}, 
+      #{valid,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.mao.dag.dal.entity.Register">
+    update register
+    set biz_code = #{bizCode,jdbcType=INTEGER},
+      biz_name = #{bizName,jdbcType=VARCHAR},
+      edges = #{edges,jdbcType=VARCHAR},
+      `valid` = #{valid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, biz_code, biz_name, edges, `valid`
+    from register
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, biz_code, biz_name, edges, `valid`
+    from register
+  </select>
 </mapper>

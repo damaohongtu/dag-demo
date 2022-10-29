@@ -40,4 +40,238 @@
     select id, biz_code, job_no, plan_time, pause, `valid`
     from job
   </select>
+  <resultMap id="BaseResultMap" type="com.mao.dag.dal.entity.Job">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="biz_code" jdbcType="INTEGER" property="bizCode" />
+    <result column="job_no" jdbcType="VARCHAR" property="jobNo" />
+    <result column="plan_time" jdbcType="BIGINT" property="planTime" />
+    <result column="pause" jdbcType="INTEGER" property="pause" />
+    <result column="valid" jdbcType="INTEGER" property="valid" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from job
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.mao.dag.dal.entity.Job">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into job (biz_code, job_no, plan_time, 
+      pause, `valid`)
+    values (#{bizCode,jdbcType=INTEGER}, #{jobNo,jdbcType=VARCHAR}, #{planTime,jdbcType=BIGINT}, 
+      #{pause,jdbcType=INTEGER}, #{valid,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.mao.dag.dal.entity.Job">
+    update job
+    set biz_code = #{bizCode,jdbcType=INTEGER},
+      job_no = #{jobNo,jdbcType=VARCHAR},
+      plan_time = #{planTime,jdbcType=BIGINT},
+      pause = #{pause,jdbcType=INTEGER},
+      `valid` = #{valid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, biz_code, job_no, plan_time, pause, `valid`
+    from job
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, biz_code, job_no, plan_time, pause, `valid`
+    from job
+  </select>
+  <resultMap id="BaseResultMap" type="com.mao.dag.dal.entity.Job">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="biz_code" jdbcType="INTEGER" property="bizCode" />
+    <result column="job_no" jdbcType="VARCHAR" property="jobNo" />
+    <result column="plan_time" jdbcType="BIGINT" property="planTime" />
+    <result column="pause" jdbcType="INTEGER" property="pause" />
+    <result column="valid" jdbcType="INTEGER" property="valid" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from job
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.mao.dag.dal.entity.Job">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into job (biz_code, job_no, plan_time, 
+      pause, `valid`)
+    values (#{bizCode,jdbcType=INTEGER}, #{jobNo,jdbcType=VARCHAR}, #{planTime,jdbcType=BIGINT}, 
+      #{pause,jdbcType=INTEGER}, #{valid,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.mao.dag.dal.entity.Job">
+    update job
+    set biz_code = #{bizCode,jdbcType=INTEGER},
+      job_no = #{jobNo,jdbcType=VARCHAR},
+      plan_time = #{planTime,jdbcType=BIGINT},
+      pause = #{pause,jdbcType=INTEGER},
+      `valid` = #{valid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, biz_code, job_no, plan_time, pause, `valid`
+    from job
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, biz_code, job_no, plan_time, pause, `valid`
+    from job
+  </select>
+  <resultMap id="BaseResultMap" type="com.mao.dag.dal.entity.Job">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="biz_code" jdbcType="INTEGER" property="bizCode" />
+    <result column="job_no" jdbcType="VARCHAR" property="jobNo" />
+    <result column="plan_time" jdbcType="BIGINT" property="planTime" />
+    <result column="pause" jdbcType="INTEGER" property="pause" />
+    <result column="valid" jdbcType="INTEGER" property="valid" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from job
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.mao.dag.dal.entity.Job">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into job (biz_code, job_no, plan_time, 
+      pause, `valid`)
+    values (#{bizCode,jdbcType=INTEGER}, #{jobNo,jdbcType=VARCHAR}, #{planTime,jdbcType=BIGINT}, 
+      #{pause,jdbcType=INTEGER}, #{valid,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.mao.dag.dal.entity.Job">
+    update job
+    set biz_code = #{bizCode,jdbcType=INTEGER},
+      job_no = #{jobNo,jdbcType=VARCHAR},
+      plan_time = #{planTime,jdbcType=BIGINT},
+      pause = #{pause,jdbcType=INTEGER},
+      `valid` = #{valid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, biz_code, job_no, plan_time, pause, `valid`
+    from job
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, biz_code, job_no, plan_time, pause, `valid`
+    from job
+  </select>
+  <resultMap id="BaseResultMap" type="com.mao.dag.dal.entity.Job">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="biz_code" jdbcType="INTEGER" property="bizCode" />
+    <result column="job_no" jdbcType="VARCHAR" property="jobNo" />
+    <result column="plan_time" jdbcType="BIGINT" property="planTime" />
+    <result column="pause" jdbcType="INTEGER" property="pause" />
+    <result column="valid" jdbcType="INTEGER" property="valid" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from job
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.mao.dag.dal.entity.Job">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into job (biz_code, job_no, plan_time, 
+      pause, `valid`)
+    values (#{bizCode,jdbcType=INTEGER}, #{jobNo,jdbcType=VARCHAR}, #{planTime,jdbcType=BIGINT}, 
+      #{pause,jdbcType=INTEGER}, #{valid,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.mao.dag.dal.entity.Job">
+    update job
+    set biz_code = #{bizCode,jdbcType=INTEGER},
+      job_no = #{jobNo,jdbcType=VARCHAR},
+      plan_time = #{planTime,jdbcType=BIGINT},
+      pause = #{pause,jdbcType=INTEGER},
+      `valid` = #{valid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, biz_code, job_no, plan_time, pause, `valid`
+    from job
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, biz_code, job_no, plan_time, pause, `valid`
+    from job
+  </select>
+  <resultMap id="BaseResultMap" type="com.mao.dag.dal.entity.Job">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="biz_code" jdbcType="INTEGER" property="bizCode" />
+    <result column="job_no" jdbcType="VARCHAR" property="jobNo" />
+    <result column="plan_time" jdbcType="BIGINT" property="planTime" />
+    <result column="pause" jdbcType="INTEGER" property="pause" />
+    <result column="valid" jdbcType="INTEGER" property="valid" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from job
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.mao.dag.dal.entity.Job">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into job (biz_code, job_no, plan_time, 
+      pause, `valid`)
+    values (#{bizCode,jdbcType=INTEGER}, #{jobNo,jdbcType=VARCHAR}, #{planTime,jdbcType=BIGINT}, 
+      #{pause,jdbcType=INTEGER}, #{valid,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.mao.dag.dal.entity.Job">
+    update job
+    set biz_code = #{bizCode,jdbcType=INTEGER},
+      job_no = #{jobNo,jdbcType=VARCHAR},
+      plan_time = #{planTime,jdbcType=BIGINT},
+      pause = #{pause,jdbcType=INTEGER},
+      `valid` = #{valid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, biz_code, job_no, plan_time, pause, `valid`
+    from job
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, biz_code, job_no, plan_time, pause, `valid`
+    from job
+  </select>
+  <resultMap id="BaseResultMap" type="com.mao.dag.dal.entity.Job">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="biz_code" jdbcType="INTEGER" property="bizCode" />
+    <result column="job_no" jdbcType="VARCHAR" property="jobNo" />
+    <result column="plan_time" jdbcType="BIGINT" property="planTime" />
+    <result column="pause" jdbcType="INTEGER" property="pause" />
+    <result column="valid" jdbcType="INTEGER" property="valid" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from job
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.mao.dag.dal.entity.Job">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into job (biz_code, job_no, plan_time, 
+      pause, `valid`)
+    values (#{bizCode,jdbcType=INTEGER}, #{jobNo,jdbcType=VARCHAR}, #{planTime,jdbcType=BIGINT}, 
+      #{pause,jdbcType=INTEGER}, #{valid,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.mao.dag.dal.entity.Job">
+    update job
+    set biz_code = #{bizCode,jdbcType=INTEGER},
+      job_no = #{jobNo,jdbcType=VARCHAR},
+      plan_time = #{planTime,jdbcType=BIGINT},
+      pause = #{pause,jdbcType=INTEGER},
+      `valid` = #{valid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, biz_code, job_no, plan_time, pause, `valid`
+    from job
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, biz_code, job_no, plan_time, pause, `valid`
+    from job
+  </select>
 </mapper>

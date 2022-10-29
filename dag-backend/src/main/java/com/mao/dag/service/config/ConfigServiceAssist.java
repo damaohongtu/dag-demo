@@ -25,7 +25,7 @@ public class ConfigServiceAssist {
     private RegisterRepo registerRepo;
 
     @Transactional(rollbackFor = Exception.class)
-    public void persistConfig(ConfigRequest request) throws Exception {
+    public boolean persistConfig(ConfigRequest request) throws Exception {
 
         Register register = buildRegister(request);
         List<Config> configList = buildConfig(request);
@@ -41,6 +41,7 @@ public class ConfigServiceAssist {
                 throw new Exception("插入配置失败");
             }
         }
+        return true;
     }
 
     private Register buildRegister(ConfigRequest request){
