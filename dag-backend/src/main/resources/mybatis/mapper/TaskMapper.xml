@@ -297,4 +297,41 @@
     select id, biz_code, task_no, task_info, `valid`
     from task
   </select>
+  <resultMap id="BaseResultMap" type="com.mao.dag.dal.entity.Task">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="biz_code" jdbcType="INTEGER" property="bizCode" />
+    <result column="task_no" jdbcType="VARCHAR" property="taskNo" />
+    <result column="task_info" jdbcType="VARCHAR" property="taskInfo" />
+    <result column="valid" jdbcType="INTEGER" property="valid" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from task
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.mao.dag.dal.entity.Task">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into task (biz_code, task_no, task_info, 
+      `valid`)
+    values (#{bizCode,jdbcType=INTEGER}, #{taskNo,jdbcType=VARCHAR}, #{taskInfo,jdbcType=VARCHAR}, 
+      #{valid,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.mao.dag.dal.entity.Task">
+    update task
+    set biz_code = #{bizCode,jdbcType=INTEGER},
+      task_no = #{taskNo,jdbcType=VARCHAR},
+      task_info = #{taskInfo,jdbcType=VARCHAR},
+      `valid` = #{valid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, biz_code, task_no, task_info, `valid`
+    from task
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, biz_code, task_no, task_info, `valid`
+    from task
+  </select>
 </mapper>
