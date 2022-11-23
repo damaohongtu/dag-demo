@@ -1,5 +1,6 @@
 .DS_Store
 dag-front/node_modules
+mixquery-front/node_modules
 dag-front/dist
 dag-backend/target
 
